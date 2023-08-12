@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "course-project"
+version = "0.1.0"
+description = ""
+authors = ["Ofir <ofirfirst@gmail.com>"]
+readme = "README.md"
+packages = [{include = "course_project"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+selenium = "^4.11.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
