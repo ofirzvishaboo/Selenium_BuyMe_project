@@ -12,10 +12,11 @@ class TestBuyMe(TestCase):
         self.driver.get('https://buyme.co.il/')
         self.register_menu = LoginPage(self.driver)
         self.find_gift = HomeScreen(self.driver)
+        self.pick_business = PickBusiness(self.driver)
         # implicit wait
         self.driver.implicitly_wait(10)
         # page load timeout
-        # self.driver.set_page_load_timeout(10)
+        self.driver.set_page_load_timeout(10)
 
     def test_registration(self):
         self.register_menu.click_signup_button()
@@ -39,11 +40,10 @@ class TestBuyMe(TestCase):
         self.find_gift.click_search()
 
     def test_pick_business(self):
-        self.pickbusiness = PickBusiness(self.driver)
-        self.pickbusiness.assert_url()
-        self.pickbusiness.click_business()
-        self.pickbusiness.set_present_price()
-        self.pickbusiness.click_choose()
+        self.pick_business.assert_url()
+        self.pick_business.click_business()
+        self.pick_business.set_present_price()
+        self.pick_business.click_choose()
 
     def test_sending_gifts(self):
         self.send_gifts = SendGifts(self.driver)
