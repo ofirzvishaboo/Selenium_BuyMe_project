@@ -27,7 +27,6 @@ class HomeScreen(BasePage):
 
     def click_search(self):
         self.click_element(By.CSS_SELECTOR, "a[href='https://buyme.co.il/search']")
-
     # Pick Business
 
     # def assert_url(self):
@@ -44,4 +43,3 @@ class HomeScreen(BasePage):
     #     self.click_element(By.CSS_SELECTOR, "button[gtm='בחירה']")
 
     # Sender receiver info
-

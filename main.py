@@ -58,4 +58,3 @@ class TestBuyMe(TestCase):
 
     def tearDown(self):
         self.driver.quit()
-

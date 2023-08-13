@@ -35,9 +35,8 @@ class LoginPage(BasePage):
         # button.click()
 
     def click_submit(self):
-        submit_button = (By.CSS_SELECTOR, "button[gtm='הרשמה ל-BUYME']")
-        self.move_to_element(submit_button)
-        self.click_element(submit_button)
+        self.move_to_element(By.CSS_SELECTOR, "button[gtm='הרשמה ל-BUYME']")
+        self.click_element(By.CSS_SELECTOR, "button[gtm='הרשמה ל-BUYME']")
         # action = ActionChains(self.driver)
         # my_button = self.driver.find_element(By.CSS_SELECTOR, "button[gtm='הרשמה ל-BUYME']")
         # action.move_to_element(my_button).perform()
