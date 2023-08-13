@@ -26,8 +26,6 @@ class LoginPage(BasePage):
     def enter_password_confirmation(self):
         self.enter_text(By.CSS_SELECTOR, "input[placeholder='אימות סיסמה']", "Ofirfirst3000")
 
-# The following code will wait for the button to be visible before clicking it.
-    # This will help to prevent errors caused by the button not being ready yet.
     def click_login_checkbox(self):
         self.click_element(By.CSS_SELECTOR, "svg[xmlns='http://www.w3.org/2000/svg']")
         # button = WebDriverWait(self.driver, 10).until(
@@ -42,10 +40,8 @@ class LoginPage(BasePage):
         # action.move_to_element(my_button).perform()
 
     def firstname_assertion(self):
-        self.assert_input(By.CSS_SELECTOR, "input[placeholder='שם פרטי']")
         # Assert that the name field contains the value "ofir"
-
-
+        self.assert_input(By.CSS_SELECTOR, "input[placeholder='שם פרטי']", self.name)
     # def enter_name(self):
     #     # firstname = self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='שם פרטי']")
     #     # firstname.clear()
@@ -65,4 +61,3 @@ class LoginPage(BasePage):
     #     passw1 = self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='אימות סיסמה']")
     #     passw1.clear()
     #     passw1.send_keys("Ofirfirst3000")
-
