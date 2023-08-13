@@ -13,6 +13,7 @@ class TestBuyMe(TestCase):
         self.register_menu = LoginPage(self.driver)
         self.find_gift = HomeScreen(self.driver)
         self.pick_business = PickBusiness(self.driver)
+        self.send_gifts = SendGifts(self.driver)
         # implicit wait
         self.driver.implicitly_wait(10)
         # page load timeout
@@ -21,15 +22,15 @@ class TestBuyMe(TestCase):
     def test_registration(self):
         self.register_menu.click_signup_button()
         self.register_menu.click_signup_text()
-    # Fill details
+        # Fill details
         self.register_menu.enter_name()
         self.register_menu.enter_mail()
         self.register_menu.enter_password()
         self.register_menu.enter_password_confirmation()
-    # Click checkbox and submit
+        # Click checkbox and submit
         self.register_menu.click_login_checkbox()
         self.register_menu.click_submit()
-    # Assert name is correct
+        # Assert name is correct
         self.register_menu.firstname_assertion()
 
     def test_home_screen(self):
@@ -46,7 +47,6 @@ class TestBuyMe(TestCase):
         self.pick_business.click_choose()
 
     def test_sending_gifts(self):
-        self.send_gifts = SendGifts(self.driver)
         self.send_gifts.receiver_name()
         # self.send_gifts.occasion()
         self.send_gifts.birthday_card("Mazal tov leha gever")
