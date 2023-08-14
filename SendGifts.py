@@ -6,6 +6,7 @@ class SendGifts(BasePage):
         "RECEIVER_NAME_INPUT": (By.CSS_SELECTOR, "input[title='שם מקבל המתנה']"),
         "OCCASION_SELECT": (By.CSS_SELECTOR, "select[name='eventType']"),
         "BIRTHDAY_CARD_TEXTAREA": (By.CSS_SELECTOR, "textarea[data-parsley-group='voucher-greeting']"),
+        "PHOTO_UPLOAD": (By.CSS_SELECTOR, "input[id='ember1394']"),
         "CONTINUE_BUTTON": (By.CSS_SELECTOR, "button[gtm='המשך']"),
         "CHOOSE_SMS_SVG": (By.CSS_SELECTOR, "svg[gtm='method-sms']"),
         "SMS_INPUT": (By.CSS_SELECTOR, "input[id=sms]"),
@@ -29,8 +30,11 @@ class SendGifts(BasePage):
         self.enter_text(*self.SELECTORS["BIRTHDAY_CARD_TEXTAREA"], card)
 
     def add_picture(self):
-        # Need to add a picture
-        pass
+        filepath = "/Users/ofir/Documents/תמונות/logo.png"
+        self.move_to_element(*self.SELECTORS["PHOTO_UPLOAD"])
+        # self.click_element(*self.SELECTORS["PHOTO_UPLOAD"])
+        self.send_photo(*self.SELECTORS["PHOTO_UPLOAD"], filepath)
+
 
     def click_continue(self):
         self.move_to_element(*self.SELECTORS["CONTINUE_BUTTON"])

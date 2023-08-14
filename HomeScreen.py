@@ -40,7 +40,7 @@ class HomeScreen(BasePage):
         "EMAIL_INPUT": (By.CSS_SELECTOR, "input[placeholder='מייל']"),
         "PASSWORD_INPUT": (By.CSS_SELECTOR, "input[placeholder='סיסמה']"),
         "LOGIN_BUTTON": (By.CSS_SELECTOR, "button[gtm='כניסה ל-BUYME']"),
-        "PRICE_SELECT": (By.XPATH, "//*[@id='ember2540']/div/select"),
+        "PRICE_SELECT": (By.CSS_SELECTOR, "select[data-parsley-id='44']"),
         "AREA_SELECT": (By.XPATH, "/html/body/div[5]/div/header/div[3]/div/div/form/label[2]/div/select"),
         "CATEGORY_SELECT": (By.CSS_SELECTOR, "select[name=category]"),
         "SEARCH_LINK": (By.CSS_SELECTOR, "a[href='https://buyme.co.il/search']")
@@ -53,12 +53,12 @@ class HomeScreen(BasePage):
     def sign_in(self):
         self.click_element(*self.SELECTORS["NOT_SIGNED"])
         self.click_element(*self.SELECTORS["EMAIL_INPUT"])
-        self.enter_text(*self.SELECTORS["EMAIL_INPUT"], "ofirfirst@gmail.com")
-        self.enter_text(*self.SELECTORS["PASSWORD_INPUT"], "Ofirfirst3000")
+        self.enter_text(*self.SELECTORS["EMAIL_INPUT"], "mashumashu@gmail.com")
+        self.enter_text(*self.SELECTORS["PASSWORD_INPUT"], "Mashumashu")
         self.click_element(*self.SELECTORS["LOGIN_BUTTON"])
 
     def select_price(self):
-        self.select_by_value(*self.SELECTORS["PRICE_SELECT"], value="2")
+        self.select_by_value(*self.SELECTORS["PRICE_SELECT"], value='2')
 
     def select_area(self):
         self.select_by_value(*self.SELECTORS["AREA_SELECT"], value="11")

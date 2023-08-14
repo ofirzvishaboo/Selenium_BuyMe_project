@@ -27,11 +27,11 @@ def test_pick_business(pick_business):
     pick_business.click_choose()
 
 def test_sending_gifts(send_gifts):
-    send_gifts.receiver_name()
+    # send_gifts.receiver_name()
     # send_gifts.occasion()
     send_gifts.birthday_card("Mazal tov leha gever")
-    # send_gifts.add_picture()
-    send_gifts.click_continue()
+    send_gifts.add_picture()
+    # send_gifts.click_continue()
     # send_gifts.click_now()
     send_gifts.choose_sms()
     send_gifts.gift_sender()
