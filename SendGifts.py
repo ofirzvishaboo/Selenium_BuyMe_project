@@ -32,7 +32,6 @@ class SendGifts(BasePage):
     def add_picture(self):
         filepath = "/Users/ofir/Documents/תמונות/logo.png"
         self.move_to_element(*self.SELECTORS["PHOTO_UPLOAD"])
-        # self.click_element(*self.SELECTORS["PHOTO_UPLOAD"])
         self.send_photo(*self.SELECTORS["PHOTO_UPLOAD"], filepath)
 
 
