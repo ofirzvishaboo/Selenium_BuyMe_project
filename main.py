@@ -34,7 +34,7 @@ class TestBuyMe(TestCase):
         self.register_menu.firstname_assertion()
 
     def test_home_screen(self):
-        self.find_gift.sign_in()
+        # self.find_gift.sign_in()
         self.find_gift.select_price()
         self.find_gift.select_area()
         self.find_gift.select_category()

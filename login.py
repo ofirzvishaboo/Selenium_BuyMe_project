@@ -12,7 +12,7 @@ class LoginPage(BasePage):
 
     def click_signup_text(self):
         # Click the signup text
-        self.click_element(By.XPATH, "/html/body/div[5]/div/div[1]/div[2]/div/div[3]/div[1]/span")
+        self.click_element(By.XPATH, "//*[@id='ember964']/div/div[1]/div[2]/div/div[3]/div[1]/span")
 
     def enter_name(self):
         self.enter_text(By.CSS_SELECTOR, "input[placeholder='שם פרטי']", self.name)

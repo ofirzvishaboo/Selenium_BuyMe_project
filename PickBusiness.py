@@ -5,7 +5,6 @@ class PickBusiness(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         self.name = "ofir"
-        # self.driver.get("https://buyme.co.il/search?budget=2&category=419&region=11")
 
     def assert_url(self):
         assert self.driver.current_url == "https://buyme.co.il/search?budget=2&category=419&region=11"

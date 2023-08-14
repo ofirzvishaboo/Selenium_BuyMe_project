@@ -14,12 +14,16 @@ class HomeScreen(BasePage):
         self.click_element(By.CSS_SELECTOR, "button[gtm='כניסה ל-BUYME']")
 
     def select_price(self):
-        self.select_by_value(By.CSS_SELECTOR, "select[data-parsley-id='85']",
-                             value="2")
+        self.select_by_value(By.XPATH, "//*[@id='ember2540']/div/select", value="2")
+        # self.force_click(By.XPATH, "//*[@id='ember3347']")
+        # self.click_element(By.CSS_SELECTOR, "span[alt='סכום']")
 
     def select_area(self):
         self.select_by_value(By.XPATH, "/html/body/div[5]/div/header/div[3]/div/div/form/label[2]/div/select",
                              value="11")
+        # self.click_element(By.CSS_SELECTOR, "span[alt='אזור']")
+        # self.force_click(By.CSS_SELECTOR, "//*[@id='ember2585']/span")
+
 
     def select_category(self):
         self.select_by_value(By.CSS_SELECTOR, "select[name=category]",
@@ -27,19 +31,3 @@ class HomeScreen(BasePage):
 
     def click_search(self):
         self.click_element(By.CSS_SELECTOR, "a[href='https://buyme.co.il/search']")
-    # Pick Business
-
-    # def assert_url(self):
-    #     assert self.driver.current_url == "https://buyme.co.il/search?budget=2&category=419&region=11"
-    #
-    # def click_business(self):
-    #     self.click_element(By.CSS_SELECTOR, "a[href='https://buyme.co.il/supplier/752649?bu"
-    #                                         "dget=1&category=419&query=&region=9']")
-    #
-    # def set_present_price(self):
-    #     self.enter_text(By.CSS_SELECTOR, "input[placeholder='הכנס סכום']", "300")
-    #
-    # def click_choose(self):
-    #     self.click_element(By.CSS_SELECTOR, "button[gtm='בחירה']")
-
-    # Sender receiver info

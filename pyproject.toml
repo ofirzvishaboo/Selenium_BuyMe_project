@@ -9,6 +9,7 @@ packages = [{include = "course_project"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 selenium = "^4.11.2"
+pytest = "^7.4.0"
 
 
 [build-system]

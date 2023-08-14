@@ -5,7 +5,6 @@ class SendGifts(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         self.name = "ofir"
-        # self.driver.get("https://buyme.co.il/money/752649?price=300")
 
     def receiver_name(self):
         self.enter_text(By.CSS_SELECTOR, "input[title='שם מקבל המתנה']", "ohad")
