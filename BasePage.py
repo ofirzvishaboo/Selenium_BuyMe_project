@@ -21,9 +21,9 @@ class BasePage():
         my_button = self.wait.until(EC.presence_of_element_located((locator_type, locator_value)))
         action.move_to_element(my_button).perform()
 
-    def select_by_value(self, locator_type, locator_value, value):
+    def select_by_text(self, locator_type, locator_value, value):
         select = Select(self.driver.find_element(locator_type, locator_value))
-        select.select_by_value(value)
+        select.select_by_visible_text(value)
 
     def force_click(self, locator_type, locator_value):
         element = self.driver.find_element(locator_type, value=locator_value)
@@ -36,10 +36,3 @@ class BasePage():
     def send_photo(self, locator_type, locator_value, value):
         element = self.driver.find_element(locator_type, locator_value)
         element.send_keys(value)
-
-    # def enable_element(self, locator_type, locator_value):
-    #     disabled_element = self.driver.find_element(locator_type, value=locator_value)
-    #     self.driver.execute_script("arguments[0].removeAttribute('disabled')", disabled_element)
-    # def wait_for_appear_and_click(self, locator_type, locator_value):
-    #     element = self.wait.until(EC.presence_of_element_located((locator_type, locator_value)))
-    #     element.click()
