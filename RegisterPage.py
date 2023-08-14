@@ -1,10 +1,11 @@
 from selenium.webdriver.common.by import By
 from BasePage import BasePage
 
-class LoginPage(BasePage):
+class RegisterPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         self.name = "ofir"
+        self.driver.get("https://buyme.co.il/")
 
     # Click the "notSigned" element
     def click_signup_button(self):
@@ -42,22 +43,3 @@ class LoginPage(BasePage):
     def firstname_assertion(self):
         # Assert that the name field contains the value "ofir"
         self.assert_input(By.CSS_SELECTOR, "input[placeholder='שם פרטי']", self.name)
-    # def enter_name(self):
-    #     # firstname = self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='שם פרטי']")
-    #     # firstname.clear()
-    #     # firstname.send_keys(self.name)
-    #
-    # def enter_mail(self):
-    #     mail_name = self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='מייל']")
-    #     mail_name.clear()
-    #     mail_name.send_keys("ofirfirst@gmail.com")
-    #
-    # def enter_password(self):
-    #     passw = self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='סיסמה']")
-    #     passw.clear()
-    #     passw.send_keys("Ofirfirst3000")
-    #
-    # def enter_password_confirmation(self):
-    #     passw1 = self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='אימות סיסמה']")
-    #     passw1.clear()
-    #     passw1.send_keys("Ofirfirst3000")

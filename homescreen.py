@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 class HomeScreen(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
-        # self.name = "ofir"
+        self.driver.get("https://buyme.co.il/")
 
     def sign_in(self):
         self.click_element(By.CLASS_NAME, "notSigned")
