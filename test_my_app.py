@@ -14,7 +14,7 @@ def test_registration(register_menu, send_gifts, pick_business, find_gift):
     register_menu.firstname_assertion()
 
 # def test_home_screen(find_gift):
-#     find_gift.sign_in()
+    # find_gift.sign_in()
     # find_gift.select_price()
     # find_gift.select_area()
     # find_gift.select_category()
@@ -28,7 +28,7 @@ def test_registration(register_menu, send_gifts, pick_business, find_gift):
 
 # def test_sending_gifts(send_gifts):
     send_gifts.receiver_name()
-    # send_gifts.occasion()
+    send_gifts.occasion()
     send_gifts.birthday_card("Mazal tov leha gever")
     send_gifts.add_picture()
     send_gifts.click_continue()
