@@ -3,7 +3,8 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-class BasePage():
+
+class BasePage:
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
@@ -22,8 +23,8 @@ class BasePage():
         action.move_to_element(my_button).perform()
 
     def select_by_text(self, locator_type, locator_value, value):
-        select = Select(self.wait.until(EC.presence_of_element_located((locator_type, locator_value))))
-        select.select_by_visible_text(value)
+        select = Select(self.driver.find_element(locator_type, locator_value))
+        select.select_by_value(value)
 
     def force_click(self, locator_type, locator_value):
         element = self.driver.find_element(locator_type, value=locator_value)

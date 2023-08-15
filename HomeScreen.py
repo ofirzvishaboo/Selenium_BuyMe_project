@@ -1,6 +1,7 @@
 from BasePage import BasePage
 from selenium.webdriver.common.by import By
 
+
 class HomeScreen(BasePage):
     SELECTORS = {
         "NOT_SIGNED": (By.CLASS_NAME, "notSigned"),
@@ -9,7 +10,7 @@ class HomeScreen(BasePage):
         "LOGIN_BUTTON": (By.CSS_SELECTOR, "button[gtm='כניסה ל-BUYME']"),
         "PRICE_SELECT": (By.XPATH, "/html/body/div[3]/div/header/div[3]/div/div/form/label[1]/div/select"),
         "AREA_SELECT": (By.XPATH, "/html/body/div[5]/div/header/div[3]/div/div/form/label[2]/div/select"),
-        "CATEGORY_SELECT": (By.CSS_SELECTOR, "select[name=category]"),
+        "CATEGORY_SELECT": (By.CSS_SELECTOR, "select[name='category']"),
         "SEARCH_LINK": (By.CSS_SELECTOR, "a[href='https://buyme.co.il/search']")
     }
 
@@ -24,13 +25,13 @@ class HomeScreen(BasePage):
         self.click_element(*self.SELECTORS["LOGIN_BUTTON"])
 
     def select_price(self):
-        self.select_by_text(*self.SELECTORS["PRICE_SELECT"], value='100-199 ש"ח')
+        self.select_by_text(*self.SELECTORS["PRICE_SELECT"], value="2")
 
     def select_area(self):
-        self.select_by_text(*self.SELECTORS["AREA_SELECT"], value="מרכז")
+        self.select_by_text(*self.SELECTORS["AREA_SELECT"], value="11")
 
     def select_category(self):
-        self.select_by_text(*self.SELECTORS["CATEGORY_SELECT"], value="מתנות למזל אריה")
+        self.select_by_text(*self.SELECTORS["CATEGORY_SELECT"], value="419")
 
     def click_search(self):
         self.click_element(*self.SELECTORS["SEARCH_LINK"])
