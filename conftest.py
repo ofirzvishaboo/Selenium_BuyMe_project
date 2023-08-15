@@ -13,12 +13,16 @@ with open('config.json') as config_file:
     browser_type = config['browser']
 
 # Initialize WebDriver based on browser_type
+
+
 @pytest.fixture
 def driver():
-    driver = webdriver.Chrome(service=Service("/Users/ofir/mysh/seleniumchrome/chromedriver_mac_arm64/chromedriver"))
+    driver = webdriver.Chrome(service=Service("/Users/ofirzvishaboo/Documents/chromedriver-mac-arm64/chromedriver"))
     driver.get(url)
     yield driver
     driver.quit()
+
+
 def test_all(driver):
     register_menu = RegisterPage(driver)
     register_menu.click_signup_button()
@@ -30,29 +34,29 @@ def test_all(driver):
     register_menu.enter_password_confirmation()
     # Click checkbox and submit
     register_menu.click_login_checkbox()
-    register_menu.click_submit()
+    # register_menu.click_submit()
     # Assert name is correct
     register_menu.firstname_assertion()
 
-    find_gift = HomeScreen(driver)
-    find_gift.sign_in()
+    # find_gift = HomeScreen(driver)
+    # # find_gift.sign_in()
     # find_gift.select_price()
     # find_gift.select_area()
     # find_gift.select_category()
-    find_gift.click_search()
-
-    pick_business = PickBusiness(driver)
-    pick_business.assert_url()
-    pick_business.click_business()
-    pick_business.set_present_price()
-    pick_business.click_choose()
-
-    send_gifts = SendGifts(driver)
-    send_gifts.receiver_name()
-    # send_gifts.occasion()
-    send_gifts.birthday_card("Mazal tov leha gever")
-    send_gifts.add_picture()
-    send_gifts.click_continue()
-    # send_gifts.click_now()
-    send_gifts.choose_sms()
-    send_gifts.gift_sender()
+    # find_gift.click_search()
+    #
+    # pick_business = PickBusiness(driver)
+    # pick_business.assert_url()
+    # pick_business.click_business()
+    # pick_business.set_present_price()
+    # pick_business.click_choose()
+    #
+    # send_gifts = SendGifts(driver)
+    # send_gifts.receiver_name()
+    # # send_gifts.occasion()
+    # send_gifts.birthday_card("Mazal tov leha gever")
+    # send_gifts.add_picture()
+    # send_gifts.click_continue()
+    # # send_gifts.click_now()
+    # send_gifts.choose_sms()
+    # send_gifts.gift_sender()

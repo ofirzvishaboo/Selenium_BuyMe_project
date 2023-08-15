@@ -22,7 +22,7 @@ class BasePage():
         action.move_to_element(my_button).perform()
 
     def select_by_text(self, locator_type, locator_value, value):
-        select = Select(self.driver.find_element(locator_type, locator_value))
+        select = Select(self.wait.until(EC.presence_of_element_located((locator_type, locator_value))))
         select.select_by_visible_text(value)
 
     def force_click(self, locator_type, locator_value):
