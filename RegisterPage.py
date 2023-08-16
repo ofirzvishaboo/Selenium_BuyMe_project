@@ -3,7 +3,7 @@ from BasePage import BasePage
 
 class RegisterPage(BasePage):
     SELECTORS = {
-        "NOT_SIGNED": (By.CLASS_NAME, "notSigned"),
+        "NOT_SIGNED": (By.CSS_SELECTOR, "a[aria-label='כניסה / הרשמה']"),
         "SIGNUP_TEXT": (By.XPATH, "//*[@id='ember964']/div/div[1]/div[2]/div/div[3]/div[1]/span"),
         "NAME_INPUT": (By.CSS_SELECTOR, "input[placeholder='שם פרטי']"),
         "EMAIL_INPUT": (By.CSS_SELECTOR, "input[placeholder='מייל']"),
