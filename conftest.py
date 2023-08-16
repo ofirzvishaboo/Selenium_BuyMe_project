@@ -7,36 +7,40 @@ from PickBusiness import PickBusiness
 from selenium import webdriver
 import json
 
+with open('config.json') as file:
+    data = json.load(file)
+
+
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome(service=Service("/Users/ofirzvishaboo/Documents/chromedriver-mac-arm64/chromedriver"))
-    driver.get("https://buyme.co.il/")
+    driver.get(data["url"])
     yield driver
     driver.quit()
 
 
 def test_all(driver):
-    register_menu = RegisterPage(driver)
-    register_menu.click_signup_button()
-    register_menu.click_signup_text()
-    # Fill details
-    register_menu.enter_name()
-    register_menu.enter_mail()
-    register_menu.enter_password()
-    register_menu.enter_password_confirmation()
-    # Click checkbox and submit
-    register_menu.click_login_checkbox()
-    # register_menu.click_submit()
-    # Assert name is correct
-    register_menu.firstname_assertion()
+    # register_menu = RegisterPage(driver)
+    # register_menu.click_signup_button()
+    # register_menu.click_signup_text()
+    # # Fill details
+    # register_menu.enter_name()
+    # register_menu.enter_mail()
+    # register_menu.enter_password()
+    # register_menu.enter_password_confirmation()
+    # # Click checkbox and submit
+    # register_menu.click_login_checkbox()
+    # # register_menu.click_submit()
+    # # Assert name is correct
+    # register_menu.firstname_assertion()
 
-    # find_gift = HomeScreen(driver)
+    find_gift = HomeScreen(driver)
     # find_gift.sign_in()
-    # # find_gift.select_price()
-    # # find_gift.select_area()
+    find_gift.select_price()
+    # find_gift.select_area()
     # # find_gift.select_category()
     # find_gift.click_search()
-    # #
+    #
     # pick_business = PickBusiness(driver)
     # pick_business.assert_url()
     # pick_business.click_business()
