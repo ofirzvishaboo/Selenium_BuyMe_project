@@ -3,10 +3,11 @@ from BasePage import BasePage
 
 class SendGifts(BasePage):
     SELECTORS = {
-        "RECEIVER_NAME_INPUT": (By.CSS_SELECTOR, "input[title='שם מקבל המתנה']"),
-        "OCCASION_SELECT": (By.CSS_SELECTOR, "select[name='eventType']"),
+        "RECEIVER_NAME_INPUT": (By.CSS_SELECTOR, "input[tuaandiinputdiscrp='שם מקבל המתנה. כדי לשלוח את המתנה אליך. נווט אחורה ושנה את הבחירה בכפתורי הרדיו']"),
+        "OCCASION_SELECT": (By.CSS_SELECTOR, "span[alt='לאיזה אירוע?']"),
+        "OCCASION_SELECT_CLICK": (By.CSS_SELECTOR, "li[value='10']"),
         "BIRTHDAY_CARD_TEXTAREA": (By.CSS_SELECTOR, "textarea[data-parsley-group='voucher-greeting']"),
-        "PHOTO_UPLOAD": (By.CSS_SELECTOR, "input[id='ember1394']"),
+        "PHOTO_UPLOAD": (By.CSS_SELECTOR, "input[type='file']"),
         "CONTINUE_BUTTON": (By.CSS_SELECTOR, "button[gtm='המשך']"),
         "CHOOSE_SMS_SVG": (By.CSS_SELECTOR, "svg[gtm='method-sms']"),
         "SMS_INPUT": (By.CSS_SELECTOR, "input[id=sms]"),
@@ -22,17 +23,18 @@ class SendGifts(BasePage):
         self.enter_text(*self.SELECTORS["RECEIVER_NAME_INPUT"], "ohad")
 
     def occasion(self):
-        self.select_by_text(*self.SELECTORS["OCCASION_SELECT"], "יום הולדת")
+        self.click_element(*self.SELECTORS["OCCASION_SELECT"])
+        self.force_click(*self.SELECTORS["OCCASION_SELECT_CLICK"])
+        # self.select_by_text(*self.SELECTORS["OCCASION_SELECT"], "יום הולדת")
 
     def birthday_card(self, card):
         self.move_to_element(*self.SELECTORS["BIRTHDAY_CARD_TEXTAREA"])
         self.enter_text(*self.SELECTORS["BIRTHDAY_CARD_TEXTAREA"], card)
 
     def add_picture(self):
-        filepath = "/Users/ofir/Documents/תמונות/logo.png"
+        filepath = "/Users/ofirzvishaboo/Downloads/my_logo.png"
         self.move_to_element(*self.SELECTORS["PHOTO_UPLOAD"])
         self.send_photo(*self.SELECTORS["PHOTO_UPLOAD"], filepath)
-
 
     def click_continue(self):
         self.move_to_element(*self.SELECTORS["CONTINUE_BUTTON"])

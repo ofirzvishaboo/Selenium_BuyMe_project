@@ -1,5 +1,8 @@
+import allure
 from selenium.webdriver.common.by import By
 from BasePage import BasePage
+
+
 
 class RegisterPage(BasePage):
     SELECTORS = {
@@ -27,13 +30,13 @@ class RegisterPage(BasePage):
         self.enter_text(*self.SELECTORS["NAME_INPUT"], self.name)
 
     def enter_mail(self):
-        self.enter_text(*self.SELECTORS["EMAIL_INPUT"], "mashumashu1@gmail.com")
+        self.enter_text(*self.SELECTORS["EMAIL_INPUT"], "mash22hu123@gmail.com")
 
     def enter_password(self):
-        self.enter_text(*self.SELECTORS["PASSWORD_INPUT"], "Ofirfirs1t3000")
+        self.enter_text(*self.SELECTORS["PASSWORD_INPUT"], "Ohoh1123654")
 
     def enter_password_confirmation(self):
-        self.enter_text(*self.SELECTORS["CONFIRM_PASSWORD_INPUT"], "Ofirfirs1t3000")
+        self.enter_text(*self.SELECTORS["CONFIRM_PASSWORD_INPUT"], "Ohoh1123654")
 
     def click_login_checkbox(self):
         self.click_element(*self.SELECTORS["LOGIN_CHECKBOX"])
@@ -41,6 +44,9 @@ class RegisterPage(BasePage):
     def click_submit(self):
         self.move_to_element(*self.SELECTORS["SUBMIT_BUTTON"])
         self.click_element(*self.SELECTORS["SUBMIT_BUTTON"])
+
+    def get_screenshot(self):
+        self.screenshot(*self.SELECTORS["SUBMIT_BUTTON"])
 
     def firstname_assertion(self):
         self.assert_input(*self.SELECTORS["NAME_INPUT"], self.name)

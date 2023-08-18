@@ -2,6 +2,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from allure_commons.types import AttachmentType
+import allure
 
 
 class BasePage:
@@ -27,13 +29,21 @@ class BasePage:
         select.select_by_value(value)
 
     def force_click(self, locator_type, locator_value):
-        element = self.driver.find_element(locator_type, value=locator_value)
+        element = self.wait.until(EC.presence_of_element_located((locator_type, locator_value)))
         self.driver.execute_script("arguments[0].click();", element)
 
     def assert_input(self, locator_type, locator_value, name):
-        element = self.driver.find_element(locator_type, value=locator_value)
+        element = self.wait.until(EC.presence_of_element_located((locator_type, locator_value)))
         assert element.get_attribute("value") == name
 
     def send_photo(self, locator_type, locator_value, value):
         element = self.driver.find_element(locator_type, locator_value)
         element.send_keys(value)
+
+    def screenshot(self, locator_type, locator_value):
+        element = self.driver.find_element(locator_type, locator_value)
+        screenshot_path = "my_element.png"
+        element.screenshot(screenshot_path)
+        with open(screenshot_path, "rb") as screenshot_file:
+            allure.attach(screenshot_file.read(), name="Submit Button Screenshot",
+                          attachment_type=allure.attachment_type.PNG)
