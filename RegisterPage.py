@@ -1,7 +1,5 @@
-import allure
 from selenium.webdriver.common.by import By
 from BasePage import BasePage
-
 
 
 class RegisterPage(BasePage):
@@ -46,7 +44,7 @@ class RegisterPage(BasePage):
         self.click_element(*self.SELECTORS["SUBMIT_BUTTON"])
 
     def get_screenshot(self):
-        self.screenshot()
+        self.screenshot("SUBMIT_BUTTON")
 
     def firstname_assertion(self):
         self.assert_input(*self.SELECTORS["NAME_INPUT"], self.name)

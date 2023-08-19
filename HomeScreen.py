@@ -8,7 +8,6 @@ class HomeScreen(BasePage):
         "EMAIL_INPUT": (By.CSS_SELECTOR, "input[placeholder='מייל']"),
         "PASSWORD_INPUT": (By.CSS_SELECTOR, "input[placeholder='סיסמה']"),
         "LOGIN_BUTTON": (By.CSS_SELECTOR, "button[gtm='כניסה ל-BUYME']"),
-        # "PRICE_SELECT": (By.XPATH, "/html/body/div[3]/div/header/div[3]/div/div/form/label[1]/div/select"),
         "PRICE_SELECT_CLICK": (By.CSS_SELECTOR, "span[title='סכום']"),
         "PRICE_CLICK": (By.CSS_SELECTOR, "li[value='2']"),
         "AREA_SELECT": (By.XPATH, "//*[@id='ember1088']/div/div[1]/span"),
