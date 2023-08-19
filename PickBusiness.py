@@ -4,7 +4,7 @@ from BasePage import BasePage
 
 class PickBusiness(BasePage):
     SELECTORS = {
-        "BUSINESS_CARD": (By.XPATH, "/html/body/div[3]/div/div[2]/div[1]/div/ul/div[2]"),
+        "BUSINESS_CARD": (By.XPATH, "//*[@id='ember1622']/div[2]/span"),
         "PRESENT_PRICE_INPUT": (By.CSS_SELECTOR, "input[placeholder='הכנס סכום']"),
         "CHOOSE_BUTTON": (By.CSS_SELECTOR, "button[gtm='בחירה']")
     }
@@ -16,7 +16,7 @@ class PickBusiness(BasePage):
         assert self.driver.current_url == "https://buyme.co.il/search?budget=2&category=419&region=11"
 
     def click_business(self):
-        self.force_click(*self.SELECTORS["BUSINESS_CARD"])
+        self.click_element(*self.SELECTORS["BUSINESS_CARD"])
 
     def set_present_price(self):
         self.enter_text(*self.SELECTORS["PRESENT_PRICE_INPUT"], "300")

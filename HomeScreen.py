@@ -34,7 +34,7 @@ class HomeScreen(BasePage):
         # self.select_by_text(*self.SELECTORS["PRICE_SELECT"], value="2")
 
     def select_area(self):
-        self.click_element(*self.SELECTORS["AREA_SELECT"])
+        self.force_click(*self.SELECTORS["AREA_SELECT"])
         self.force_click(*self.SELECTORS["AREA_SELECT_CLICK"])
         # self.select_by_text(*self.SELECTORS["AREA_SELECT_CLICK"], value="11")
 

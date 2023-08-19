@@ -30,7 +30,7 @@ class RegisterPage(BasePage):
         self.enter_text(*self.SELECTORS["NAME_INPUT"], self.name)
 
     def enter_mail(self):
-        self.enter_text(*self.SELECTORS["EMAIL_INPUT"], "mash22hu123@gmail.com")
+        self.enter_text(*self.SELECTORS["EMAIL_INPUT"], "madddsdefbtbg2hu123@gmail.com")
 
     def enter_password(self):
         self.enter_text(*self.SELECTORS["PASSWORD_INPUT"], "Ohoh1123654")
@@ -46,7 +46,7 @@ class RegisterPage(BasePage):
         self.click_element(*self.SELECTORS["SUBMIT_BUTTON"])
 
     def get_screenshot(self):
-        self.screenshot(*self.SELECTORS["SUBMIT_BUTTON"])
+        self.screenshot()
 
     def firstname_assertion(self):
         self.assert_input(*self.SELECTORS["NAME_INPUT"], self.name)

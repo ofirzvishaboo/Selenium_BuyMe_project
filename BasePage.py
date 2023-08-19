@@ -3,6 +3,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from allure_commons.types import AttachmentType
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 import allure
 
 
@@ -40,10 +41,5 @@ class BasePage:
         element = self.driver.find_element(locator_type, locator_value)
         element.send_keys(value)
 
-    def screenshot(self, locator_type, locator_value):
-        element = self.driver.find_element(locator_type, locator_value)
-        screenshot_path = "my_element.png"
-        element.screenshot(screenshot_path)
-        with open(screenshot_path, "rb") as screenshot_file:
-            allure.attach(screenshot_file.read(), name="Submit Button Screenshot",
-                          attachment_type=allure.attachment_type.PNG)
+    def screenshot(self):
+        allure.attach(self.driver.get_screenshot_as_png(), name="Submit Button Screenshot", attachment_type=allure.attachment_type.PNG)
