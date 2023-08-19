@@ -13,7 +13,10 @@ with open('config.json') as file:
 
 @pytest.fixture
 def driver():
-    driver = webdriver.Chrome(service=Service("/Users/ofirzvishaboo/Documents/chromedriver-mac-arm64/chromedriver"))
+    if data["browser"] == 'chrome':
+        driver = webdriver.Chrome(service=Service("/Users/ofirzvishaboo/Documents/chromedriver-mac-arm64/chromedriver"))
+    elif data["browser"] == 'firefox':
+        driver = webdriver.Firefox(service=Service("/Users/ofirzvishaboo/Documents/chromedriver-mac-arm64/chromedriver"))
     driver.get(data["url"])
     yield driver
     driver.quit()

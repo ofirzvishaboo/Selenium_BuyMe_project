@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from BasePage import BasePage
 
+
 class SendGifts(BasePage):
     SELECTORS = {
         "RECEIVER_NAME_INPUT": (By.CSS_SELECTOR, "input[tuaandiinputdiscrp='שם מקבל המתנה. כדי לשלוח את המתנה אליך. נווט אחורה ושנה את הבחירה בכפתורי הרדיו']"),
@@ -12,7 +13,6 @@ class SendGifts(BasePage):
         "CHOOSE_SMS_SVG": (By.CSS_SELECTOR, "svg[gtm='method-sms']"),
         "SMS_INPUT": (By.CSS_SELECTOR, "input[id=sms]"),
         "GIFT_SENDER_INPUT": (By.CSS_SELECTOR, "input[placeholder='שם שולח המתנה']"),
-        "CLICK_NOW_DIV": (By.CSS_SELECTOR, "div[gtm='עכשיו']")
     }
 
     def __init__(self, driver):
@@ -25,7 +25,6 @@ class SendGifts(BasePage):
     def occasion(self):
         self.click_element(*self.SELECTORS["OCCASION_SELECT"])
         self.force_click(*self.SELECTORS["OCCASION_SELECT_CLICK"])
-        # self.select_by_text(*self.SELECTORS["OCCASION_SELECT"], "יום הולדת")
 
     def birthday_card(self, card):
         self.move_to_element(*self.SELECTORS["BIRTHDAY_CARD_TEXTAREA"])
@@ -39,9 +38,6 @@ class SendGifts(BasePage):
     def click_continue(self):
         self.move_to_element(*self.SELECTORS["CONTINUE_BUTTON"])
         self.click_element(*self.SELECTORS["CONTINUE_BUTTON"])
-
-    def click_now(self):
-        self.click_element(*self.SELECTORS["CLICK_NOW_DIV"])
 
     def choose_sms(self):
         self.click_element(*self.SELECTORS["CHOOSE_SMS_SVG"])

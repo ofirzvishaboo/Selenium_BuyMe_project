@@ -30,18 +30,14 @@ class HomeScreen(BasePage):
     def select_price(self):
         self.force_click(*self.SELECTORS["PRICE_SELECT_CLICK"])
         self.force_click(*self.SELECTORS["PRICE_CLICK"])
-        # self.select_by_text(*self.SELECTORS["PRICE_SELECT"], value="2")
 
     def select_area(self):
         self.force_click(*self.SELECTORS["AREA_SELECT"])
         self.force_click(*self.SELECTORS["AREA_SELECT_CLICK"])
-        # self.select_by_text(*self.SELECTORS["AREA_SELECT_CLICK"], value="11")
 
     def select_category(self):
         self.force_click(*self.SELECTORS["CATEGORY_SELECT"])
         self.force_click(*self.SELECTORS["CATEGORY_SELECT_CLICK"])
-        # self.select_by_text(*self.SELECTORS["CATEGORY_SELECT"], value="419")
 
     def click_search(self):
         self.force_click(*self.SELECTORS["SEARCH_LINK"])
-

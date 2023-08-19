@@ -22,7 +22,4 @@ class PickBusiness(BasePage):
         self.enter_text(*self.SELECTORS["PRESENT_PRICE_INPUT"], "300")
 
     def click_choose(self):
-        # self.move_to_element(*self.SELECTORS["CHOOSE_BUTTON"])
         self.force_click(*self.SELECTORS["CHOOSE_BUTTON"])
-
-
