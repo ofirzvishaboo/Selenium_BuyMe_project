@@ -28,7 +28,7 @@ class RegisterPage(BasePage):
         self.enter_text(*self.SELECTORS["NAME_INPUT"], self.name)
 
     def enter_mail(self):
-        self.enter_text(*self.SELECTORS["EMAIL_INPUT"], "madddsdefbtbg2hu123@gmail.com")
+        self.enter_text(*self.SELECTORS["EMAIL_INPUT"], "forifnnri@gmail.com")
 
     def enter_password(self):
         self.enter_text(*self.SELECTORS["PASSWORD_INPUT"], "Ohoh1123654")
