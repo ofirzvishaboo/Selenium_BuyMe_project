@@ -35,7 +35,6 @@ def test_all(driver):
     register_menu.click_login_checkbox()
     register_menu.click_submit()
     # Assert name is correct
-    register_menu.get_screenshot()
     register_menu.firstname_assertion()
 
     find_gift = HomeScreen(driver)
@@ -54,6 +53,7 @@ def test_all(driver):
     send_gifts = SendGifts(driver)
     send_gifts.receiver_name()
     send_gifts.occasion()
+    # My Birthday card
     send_gifts.birthday_card("Mazal tov leha gever")
     send_gifts.add_picture()
     send_gifts.click_continue()

@@ -21,23 +21,33 @@ class HomeScreen(BasePage):
         super().__init__(driver)
 
     def sign_in(self):
+        # Click signup/login on Homescreen
         self.click_element(*self.SELECTORS["NOT_SIGNED"])
-        self.click_element(*self.SELECTORS["EMAIL_INPUT"])
+        # Entering email
         self.enter_text(*self.SELECTORS["EMAIL_INPUT"], "mashumashu@gmail.com")
+        # Entering password
         self.enter_text(*self.SELECTORS["PASSWORD_INPUT"], "Mashumashu")
+        # Click login
         self.click_element(*self.SELECTORS["LOGIN_BUTTON"])
 
     def select_price(self):
+        # Click on price
         self.force_click(*self.SELECTORS["PRICE_SELECT_CLICK"])
+        # Choosing 100-199 shekel
         self.force_click(*self.SELECTORS["PRICE_CLICK"])
 
     def select_area(self):
+        # Click on area
         self.force_click(*self.SELECTORS["AREA_SELECT"])
+        # Choosing "מרכז"
         self.force_click(*self.SELECTORS["AREA_SELECT_CLICK"])
 
     def select_category(self):
+        # Click on catergotry
         self.force_click(*self.SELECTORS["CATEGORY_SELECT"])
+        # Choosing "מתנות למזל גדי"
         self.force_click(*self.SELECTORS["CATEGORY_SELECT_CLICK"])
 
     def click_search(self):
+        # Click on search
         self.force_click(*self.SELECTORS["SEARCH_LINK"])

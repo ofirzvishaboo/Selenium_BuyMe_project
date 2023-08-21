@@ -13,13 +13,17 @@ class PickBusiness(BasePage):
         super().__init__(driver)
 
     def assert_url(self):
+        # Asserting url
         assert self.driver.current_url == "https://buyme.co.il/search?budget=2&category=419&region=11"
 
     def click_business(self):
+        # Click on chef restaurants
         self.click_element(*self.SELECTORS["BUSINESS_CARD"])
 
     def set_present_price(self):
+        # Enter 300 shekel to textbox
         self.enter_text(*self.SELECTORS["PRESENT_PRICE_INPUT"], "300")
 
     def click_choose(self):
+        # Click on choose
         self.force_click(*self.SELECTORS["CHOOSE_BUTTON"])
