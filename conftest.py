@@ -1,5 +1,6 @@
 import pytest
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from RegisterPage import RegisterPage
 from HomeScreen import HomeScreen
 from SendGifts import SendGifts
@@ -13,8 +14,11 @@ with open('config.json') as file:
 
 @pytest.fixture
 def driver():
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
     if data["browser"] == 'chrome':
-        driver = webdriver.Chrome(service=Service("/Users/ofirzvishaboo/Documents/chromedriver-mac-arm64/chromedriver"))
+        driver = webdriver.Chrome(service=Service("/Users/ofirzvishaboo/Documents/chromedriver-mac-arm64/chromedriver"),
+                                  options=chrome_options)
     elif data["browser"] == 'firefox':
         driver = webdriver.Firefox(service=Service("/Users/ofirzvishaboo/Documents/chromedriver-mac-arm64/chromedriver"))
     driver.get(data["url"])
